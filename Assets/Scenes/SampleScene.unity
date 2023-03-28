@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6660594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6660595}
+  - component: {fileID: 6660596}
+  m_Layer: 0
+  m_Name: Weapon 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6660595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 230875505}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6660596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912a5b3ce824b13419d057fe54b09ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  prefabId: 1
+  damage: 11
+  count: 2
+  speed: 0
 --- !u!1 &87057390
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +470,7 @@ Transform:
   - {fileID: 1566516554}
   - {fileID: 1338248031}
   - {fileID: 2078927796}
+  - {fileID: 6660595}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5320,8 +5370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 736819602534335137, guid: 66462da62a2dd63499c5b0ffb70ece82, type: 3}
-  - {fileID: 1180365514334391887, guid: 4d50dafc02a4ed44e9562d540a347508, type: 3}
-  - {fileID: 6981298568468212271, guid: 0f859e96b3d268240912127bb0213826, type: 3}
+  - {fileID: 5642700055677006699, guid: e4bd43cf4051add4bb292ccfd6072ead, type: 3}
 --- !u!4 &857910324
 Transform:
   m_ObjectHideFlags: 0
@@ -18607,6 +18656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a062c6dc540a540906d4fb294c561e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTime: 0
+  maxGameTime: 20
   pool: {fileID: 857910323}
   player: {fileID: 230875506}
 --- !u!1 &2078927795
@@ -18667,6 +18718,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: []
+  spawnData:
+  - spawnTime: 0.7
+    spriteType: 0
+    health: 10
+    speed: 1.5
+  - spawnTime: 0.2
+    spriteType: 1
+    health: 15
+    speed: 2.3
 --- !u!1 &2133430389
 GameObject:
   m_ObjectHideFlags: 3

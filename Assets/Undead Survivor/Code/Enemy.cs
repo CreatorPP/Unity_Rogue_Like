@@ -7,18 +7,22 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
 
     public float speed;
+    public float health;
+    public float maxHealth;
+    public RuntimeAnimatorController[] animCon;
     public Rigidbody2D target;
 
-    bool isLive = true;
+    bool isLive;
 
     Rigidbody2D rigid;
-
+    Animator anim;
     SpriteRenderer spriter;
 
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
     }
 
@@ -45,5 +49,40 @@ public class Enemy : MonoBehaviour
     private void OnEnable() // 스크립트가 활성화 될 때 호출하는 함수
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>(); // 게임매니저에 만들어 놓은 인스턴스를 호출해서 플레이어 자체 호출
+        isLive = true;
+        health = maxHealth;
+
+    }
+
+    public void Init(SpawnData data)
+    {
+        anim.runtimeAnimatorController = animCon[data.spriteType];
+        speed = data.speed;
+        maxHealth = data.health;
+        health = data.health;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Bullet")) // 몬스터에 타겟된것이 불렛이 아니라면 끔
+        {
+            return;
+        }
+        health -= collision.GetComponent<Bullet>().damage;
+
+        if(health>0)
+        {
+            // isLive, Hit Action
+        }
+        else
+        {
+            // Die
+            Dead();
+        }
+    }
+
+    void Dead()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sprite16_alice_walk_right_0
+  m_Name: AcEnemyAlice
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
