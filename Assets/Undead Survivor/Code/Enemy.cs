@@ -15,21 +15,24 @@ public class Enemy : MonoBehaviour
     bool isLive;
 
     Rigidbody2D rigid;
+    Collider2D coll;
     Animator anim;
     SpriteRenderer spriter;
-
+    WaitForFixedUpdate wait;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
+        wait = new WaitForFixedUpdate();
     }
 
 
     private void FixedUpdate()
     {
-        if (!isLive)
+        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
 
@@ -50,6 +53,11 @@ public class Enemy : MonoBehaviour
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>(); // 게임매니저에 만들어 놓은 인스턴스를 호출해서 플레이어 자체 호출
         isLive = true;
+        coll.enabled = true;
+        rigid.simulated = true; //물리를 시뮬레이션 할건지 안 할건지
+        spriter.sortingOrder = 2;
+        anim.SetBool("Dead", false);
+
         health = maxHealth;
 
     }
@@ -64,22 +72,44 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Bullet")) // 몬스터에 타겟된것이 불렛이 아니라면 끔
+        if (!collision.CompareTag("Bullet") || !isLive) // 몬스터에 타겟된것이 불렛이 아니라면 끔 , 살아있을 때만 
         {
             return;
         }
-        health -= collision.GetComponent<Bullet>().damage;
 
-        if(health>0)
+        health -= collision.GetComponent<Bullet>().damage;
+        StartCoroutine(KnockBack()); //StartCoroutine("KnockBack");
+
+        if (health>0)
         {
             // isLive, Hit Action
+            anim.SetTrigger("Hit");
         }
         else
         {
             // Die
-            Dead();
+            isLive = false;
+            coll.enabled = false;
+            rigid.simulated = false; //물리를 시뮬레이션 할건지 안 할건지
+            spriter.sortingOrder = 1; // 스프라이트 우선순위 낮춤
+            anim.SetBool("Dead", true);
+            GameManager.instance.kill++;
+            GameManager.instance.GetExp();
+
+            
         }
     }
+
+    IEnumerator KnockBack() //코루틴
+    {
+        yield return wait; // 다음 하나의 물리 프레임 딜레이
+        Vector3 playerPos = GameManager.instance.player.transform.position;
+        Vector3 dirVec = transform.position - playerPos; // 플레이어의 반대방향으로 밀려나게 뺌
+        rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
+       
+       //yield return new WaitForSeconds(2f); //2초 쉬기
+    }
+
 
     void Dead()
     {
