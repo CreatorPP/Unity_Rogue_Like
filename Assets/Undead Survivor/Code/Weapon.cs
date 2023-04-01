@@ -16,13 +16,9 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponentInParent<Player>();
+        player = GameManager.instance.player;
     }
 
-    private void Start()
-    {
-        Init();
-    }
 
     void Update()
     {
@@ -61,8 +57,31 @@ public class Weapon : MonoBehaviour
     }
 
 
-    public void Init()
+    public void Init(ItemData data)
     {
+
+        //Basic Set
+        name = "Weapon " + data.itemId;
+        transform.parent = player.transform;
+        transform.localPosition = Vector3.zero;// 지역 위치인 localPos 을 원점으로 변경
+
+
+        // Property Set
+        id = data.itemId;
+        damage = data.baseDamage;
+        count = data.baseCount;
+
+
+        // 스크립트블 오브젝트의 독립성을 위해서 인덱스가 아닌 프리펩으로 설정
+        for(int index=0; index < GameManager.instance.pool.prefabs.Length; index++)
+        {
+            if(data.projectile == GameManager.instance.pool.prefabs[index])
+            {
+                prefabId = index;
+                break;
+            }
+        }
+
         switch (id)
         {
             case 0:

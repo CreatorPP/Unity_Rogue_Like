@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
 
-    public enum ItemType {  Mell, Range, Glove, Shoe, Heal} // 근접 원거리 글러브 신발 체력
+    public enum ItemType {  Melee, Range, Glove, Shoe, Heal} // 근접 원거리 글러브 신발 체력
 
 
     [Header("# Main Info")]
