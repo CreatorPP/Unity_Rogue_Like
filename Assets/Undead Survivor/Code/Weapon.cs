@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
-                transform.Rotate(Vector3.forward * speed * Time.deltaTime);  //-150과 forward 해야 시계방향 150 back 하면 시계 반대방향
+                transform.Rotate(Vector3.back * speed * Time.deltaTime);  //-150과 forward 해야 시계방향 150 back 하면 시계 반대방향
                 break;
             default:
                 timer += Time.deltaTime;
@@ -54,6 +54,8 @@ public class Weapon : MonoBehaviour
 
         if (id == 0)
             Batch();
+
+        player.BroadcastMessage("ApplyGear",SendMessageOptions.DontRequireReceiver);
     }
 
 
@@ -85,7 +87,7 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
-                speed = -150; // -는 시계 방향으로 돌게함   
+                speed = 150; // -는 시계 방향으로 돌게함   
                 Batch();
                 break;
             default:
@@ -93,7 +95,7 @@ public class Weapon : MonoBehaviour
                 break;
 
         }
-
+        player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
 
     void Batch()
