@@ -32,6 +32,11 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!GameManager.instance.isLive)
+        {
+            return;
+        }
+
         if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
@@ -46,6 +51,11 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!GameManager.instance.isLive)
+        {
+            return;
+        }
+
         spriter.flipX = target.position.x < rigid.position.x; // 타겟의 위치가 자신의 x 값보다 작으면 
     }
 

@@ -20,6 +20,11 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.isLive)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
         level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10f), spawnData.Length -1) ;  // Mathf.FloorToint = 소수점은 버리는 float형을 int형으로 바꾸는, CeilToint = 소수점 아래를 올리고 int로 바꿈
         if (timer > (spawnData[level].spawnTime))

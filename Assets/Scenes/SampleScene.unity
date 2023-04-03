@@ -448,6 +448,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1523830210}
+        m_TargetAssemblyTypeName: LevelUP, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &57219249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,7 +1335,6 @@ GameObject:
   - component: {fileID: 230875503}
   - component: {fileID: 230875502}
   - component: {fileID: 230875506}
-  - component: {fileID: 230875507}
   - component: {fileID: 230875508}
   - component: {fileID: 230875509}
   m_Layer: 0
@@ -1458,36 +1469,6 @@ MonoBehaviour:
   speed: 3
   scanner: {fileID: 0}
   hands: []
---- !u!114 &230875507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230875501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0339fa922d7a0db499b4b17d65c59842, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!95 &230875508
 Animator:
   serializedVersion: 4
@@ -1632,6 +1613,18 @@ MonoBehaviour:
       - m_Target: {fileID: 242946188}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
         m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1523830210}
+        m_TargetAssemblyTypeName: LevelUP, Assembly-CSharp
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2464,6 +2457,18 @@ MonoBehaviour:
       - m_Target: {fileID: 544562542}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
         m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1523830210}
+        m_TargetAssemblyTypeName: LevelUP, Assembly-CSharp
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12159,6 +12164,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1523830210}
+        m_TargetAssemblyTypeName: LevelUP, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &995095702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21229,6 +21246,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1523830210}
+        m_TargetAssemblyTypeName: LevelUP, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1434213920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21534,6 +21563,7 @@ GameObject:
   - component: {fileID: 1523830207}
   - component: {fileID: 1523830209}
   - component: {fileID: 1523830208}
+  - component: {fileID: 1523830210}
   m_Layer: 5
   m_Name: LevelUp
   m_TagString: Untagged
@@ -21550,7 +21580,7 @@ RectTransform:
   m_GameObject: {fileID: 1523830206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1322597911}
@@ -21600,6 +21630,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523830206}
   m_CullTransparentMesh: 1
+--- !u!114 &1523830210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523830206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a44e2333e478c745a8c13da5bc8067d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544357082
 GameObject:
   m_ObjectHideFlags: 0
@@ -22595,6 +22637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a062c6dc540a540906d4fb294c561e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLive: 0
   gameTime: 0
   maxGameTime: 20
   health: 0
@@ -22602,9 +22645,10 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
+  nextExp: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
   pool: {fileID: 857910323}
   player: {fileID: 230875506}
+  uiLevelUp: {fileID: 1523830210}
 --- !u!1 &2033905170
 GameObject:
   m_ObjectHideFlags: 0
