@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
 
     public void LevelUp(float damage, int count)
     {
-        this.damage = damage;
+        this.damage = damage * Character.Damage;
         this.count += count;
 
         if (id == 0)
@@ -76,8 +76,8 @@ public class Weapon : MonoBehaviour
 
         // Property Set
         id = data.itemId;
-        damage = data.baseDamage;
-        count = data.baseCount;
+        damage = data.baseDamage * Character.Damage;
+        count = data.baseCount + Character.Count;
 
 
         // 스크립트블 오브젝트의 독립성을 위해서 인덱스가 아닌 프리펩으로 설정
@@ -93,11 +93,11 @@ public class Weapon : MonoBehaviour
         switch (id)
         {
             case 0:
-                speed = 150; // -는 시계 방향으로 돌게함   
+                speed = 150 * Character.WeapoonSpeed; // -는 시계 방향으로 돌게함   
                 Batch();
                 break;
             default:
-                speed = 0.3f;
+                speed = 0.3f * Character.WeapoonRate;
                 break;
 
         }
