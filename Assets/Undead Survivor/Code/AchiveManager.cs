@@ -78,7 +78,7 @@ public class AchiveManager : MonoBehaviour
                 isAchive = GameManager.instance.kill >= 10;  //게임매니저에 있는 kill이 10 이상이면 
                 break;
             case Achive.UnlockBean:
-                isAchive = GameManager.instance.gameTime == GameManager.instance.maxGameTime;
+                isAchive = GameManager.instance.gameTime == GameManager.instance.maxGameTime; // 끝까지 생존할시 해금 코드
                 break;
 
         }

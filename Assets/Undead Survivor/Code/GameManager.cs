@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("# Game Control")]
     public bool isLive;
     public float gameTime;
-    public float maxGameTime = 2 * 10f;   //게임 맥스 시간
+    public float maxGameTime = 7f * 20f;   //게임 맥스 시간
 
     [Header("# Player Info")]
     public int playerId;
