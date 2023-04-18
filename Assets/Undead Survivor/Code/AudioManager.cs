@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
         Init();
     }
 
+    public enum Sfx { Dead, Hit, LevelUp=3, Lose, Melee, Range=7, Select, Win }
+
     void Init()
     {
         // 배경음 플레이어 초기화
@@ -51,4 +53,32 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
+    public void PlaySfx(Sfx sfx) 
+    {
+
+        for(int index=0; index < sfxPlayers.Length; index++)
+        {
+            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
+
+            if(sfxPlayers[loopIndex].isPlaying)
+            {
+                continue;
+            }
+
+            int ranIndex = 0;
+            if(sfx == Sfx.Hit || sfx ==Sfx.Melee)
+            {
+                ranIndex = Random.Range(0, 2);
+            }
+
+            channelIndex = loopIndex;
+            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            sfxPlayers[loopIndex].Play();
+            break;
+        }
+
+
+    }
+
 }

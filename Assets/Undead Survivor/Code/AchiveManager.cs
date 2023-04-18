@@ -100,6 +100,8 @@ public class AchiveManager : MonoBehaviour
     IEnumerator NoticeRoutine()
     {
         uiNotice.SetActive(true);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.LevelUp);
+
 
         yield return wait;   //4초뒤에 false로 변경
 
