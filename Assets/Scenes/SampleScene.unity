@@ -25698,14 +25698,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLive: 0
   gameTime: 0
-  maxGameTime: 140
+  maxGameTime: 300
   playerId: 0
   health: 0
   maxHealth: 100
   level: 0
   kill: 0
   exp: 0
-  nextExp: 0500000014000000280000005000000078000000c80000002c010000f4010000200300002c010000
+  nextExp: 03000000050000000a0000006400000096000000d20000001801000068010000c201000058020000
   pool: {fileID: 857910323}
   player: {fileID: 230875506}
   uiLevelUp: {fileID: 1523830210}
@@ -26019,6 +26019,7 @@ MonoBehaviour:
     spriteType: 1
     health: 15
     speed: 2.3
+  levelTime: 0
 --- !u!1 &2100969047
 GameObject:
   m_ObjectHideFlags: 0
